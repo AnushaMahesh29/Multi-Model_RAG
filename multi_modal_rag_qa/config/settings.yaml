@@ -1,0 +1,46 @@
+# Multi-Modal RAG QA System Configuration
+
+# Model Settings
+models:
+  text_embedding: "all-MiniLM-L6-v2"
+  image_embedding: "ViT-B/32"
+  llm: "meta-llama/llama-4-scout-17b-16e-instruct"
+
+# Device Settings
+device: "cpu"  # or "cuda" for GPU
+
+# Preprocessing Settings
+preprocessing:
+  chunk_size: 512
+  chunk_overlap: 50
+  remove_extra_whitespace: true
+  remove_urls: true
+
+# Embedding Settings
+embeddings:
+  batch_size: 32
+
+# Vector Store Settings
+vectorstore:
+  index_type: "flat"  # flat, ivf, or hnsw
+  index_path: "data/index/faiss_index.bin"
+  metadata_path: "data/index/metadata.pkl"
+
+# Retrieval Settings
+retrieval:
+  top_k: 5
+  max_context_length: 4000
+
+# Generation Settings
+generation:
+  temperature: 1
+  max_tokens: 1024
+  top_p: 1
+  stream: true
+
+# Paths
+paths:
+  raw_data: "data/raw"
+  intermediate: "data/intermediate"
+  index: "data/index"
+  images: "data/intermediate/images"
