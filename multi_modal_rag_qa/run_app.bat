@@ -1,3 +1,0 @@
-@echo off
-echo Starting Streamlit app with Python 3.12 virtual environment...
-venv\Scripts\streamlit.exe run src/app/streamlit_app.py
